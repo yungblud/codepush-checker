@@ -21,6 +21,7 @@ export function useCodePushCheck({ onSync, onSyncError, onCheckFinished }: { onS
             }
         }
         const sub = AppState.addEventListener("change", listener)
+        listener()
         return () => {
             sub.remove()
         }
